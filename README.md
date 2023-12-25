@@ -1,122 +1,30 @@
-# Created by https://www.toptal.com/developers/gitignore/api/linux,windows,macos,visualstudiocode
+# MovieDB App
 
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,windows,macos,visualstudiocode
+This project is a simple web application that utilizes the Movie Database (MovieDB) API to fetch and display information about movies.
 
-### Linux
+## Features
 
-\*~
+- Browse popular movies
+- Search for movies by title
+- View detailed information about a specific movie
 
-# temporary files which can be created if a process still has a handle open of a deleted file
+## Technologies Used
 
-.fuse_hidden\*
+- JavaScript
+- HTML
+- CSS (you can specify if you use any preprocessor or framework)
+- MovieDB API
 
-# KDE directory preferences
+## Getting Started
 
-.directory
+### Prerequisites
 
-# Linux trash folder which might appear on any partition or disk
+- Node.js and npm installed on your machine.
 
-.Trash-\*
+### Installation
 
-# .nfs files are created when an open file is removed but is still being accessed
+1. Clone the repository:
 
-.nfs\*
-
-### macOS
-
-# General
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-
-Icon
-
-# Thumbnails
-
-.\_\*
-
-# Files that might appear in the root of a volume
-
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-### macOS Patch
-
-# iCloud generated files
-
-\*.icloud
-
-### VisualStudioCode
-
-.vscode/_
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/_.code-snippets
-
-# Local History for Visual Studio Code
-
-.history/
-
-# Built Visual Studio Code Extensions
-
-\*.vsix
-
-### VisualStudioCode Patch
-
-# Ignore all local history of files
-
-.history
-.ionide
-
-### Windows
-
-# Windows thumbnail cache files
-
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
-
-# Dump file
-
-\*.stackdump
-
-# Folder config file
-
-[Dd]esktop.ini
-
-# Recycle Bin used on file shares
-
-$RECYCLE.BIN/
-
-# Windows Installer files
-
-_.cab
-_.msi
-_.msix
-_.msm
-\*.msp
-
-# Windows shortcuts
-
-\*.lnk
-
-# End of https://www.toptal.com/developers/gitignore/api/linux,windows,macos,visualstudiocode
+   ```bash
+   git clone https://github.com/your-username/movie-db-app.git
+   ```
