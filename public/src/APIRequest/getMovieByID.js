@@ -4,7 +4,7 @@ import { getRelatedMoviesByID } from "./getRelatedMoviesByID.js";
 
 async function getMovieByID(id) {
   try {
-    const url = new URL("https://onimovies-api.onrender.com/v1/movie/:id");
+    const url = new URL("https://onimovies-api.onrender.com/api/v1/movie/:id");
     url.pathname = url.pathname.replace(":id", id);
 
     const response = await fetch(url.toString());
