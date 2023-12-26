@@ -3,7 +3,9 @@ import { renderMovieList } from "./renderMovieList.js";
 
 async function getMoviesByCategory(id, categoryName) {
   try {
-    const url = new URL("https://onimovies-api.onrender.com/api/v1/movie/:id");
+    const url = new URL("https://onimovies-api.onrender.com/api/v1/movie/:id", {
+      mode: "no-cors",
+    });
     url.pathname = url.pathname.replace(":id", id);
 
     const response = await fetch(url.toString());

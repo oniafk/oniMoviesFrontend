@@ -4,7 +4,8 @@ import { renderMovieList } from "./renderMovieList.js";
 async function getRelatedMoviesByID(id) {
   try {
     const url = new URL(
-      "https://onimovies-api.onrender.com/api/v1/movie/:id/similar"
+      "https://onimovies-api.onrender.com/api/v1/movie/:id/similar",
+      { mode: "no-cors" }
     );
     url.pathname = url.pathname.replace(":id", id);
 
