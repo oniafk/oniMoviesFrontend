@@ -1,21 +1,28 @@
-import { API } from './AxiosAPIRequest.js';
-import { elements } from '../handleNavigation/nodes.js';
-import { renderCategoryList } from './renderCategoryList.js';
-import { getRelatedMoviesByID } from './getRelatedMoviesByID.js';
+import { elements } from "../handleNavigation/nodes.js";
+import { renderCategoryList } from "./renderCategoryList.js";
+import { getRelatedMoviesByID } from "./getRelatedMoviesByID.js";
 
 async function getMovieByID(id) {
-  const api = await API;
-  const { data: movie } = await api.get(`movie/${id}`);
+  try {
+    const url = new URL("https://onimovies-api.onrender.com/api/v1/movie/:id");
+    url.pathname = url.pathname.replace(":id", id);
 
-  elements.movieDetailTitle.textContent = movie.title;
-  elements.movieDetailDescription.textContent = movie.overview;
-  elements.movieDetailScore.textContent = movie.vote_average;
+    const response = await fetch(url.toString());
 
-  renderCategoryList(movie.genres, elements.movieDetailCategoriesList);
+    if (!response.ok) {
+      throw new Error(`Error en la solicitud: ${response.statusText}`);
+    }
+    const movie = await response.json();
 
-  const movieURL = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    elements.movieDetailTitle.textContent = movie.title;
+    elements.movieDetailDescription.textContent = movie.overview;
+    elements.movieDetailScore.textContent = movie.vote_average;
 
-  elements.headerSection.style.background = `
+    renderCategoryList(movie.genres, elements.movieDetailCategoriesList);
+
+    const movieURL = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
+    elements.headerSection.style.background = `
   linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.35) 19.27%,
@@ -24,7 +31,10 @@ async function getMovieByID(id) {
   ),
     url(${movieURL})`;
 
-  getRelatedMoviesByID(id);
+    getRelatedMoviesByID(id);
+  } catch (error) {
+    console.error(error.message);
+  }
 }
 
 export { getMovieByID };

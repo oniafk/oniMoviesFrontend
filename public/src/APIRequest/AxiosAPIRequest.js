@@ -1,15 +1,12 @@
 let API;
 
-const APIPromise = fetch('/api-key')
+const APIPromise = fetch("/api-key")
   .then((res) => res.text())
   .then((key) => {
     API = axios.create({
-      baseURL: 'https://api.themoviedb.org/3/',
+      baseURL: "https://onimovies-api.onrender.com/api/v1",
       headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-      },
-      params: {
-        api_key: key,
+        "Content-Type": "application/json;charset=utf-8",
       },
     });
     return API;

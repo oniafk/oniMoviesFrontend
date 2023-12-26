@@ -1,10 +1,12 @@
-import { elements } from '../handleNavigation/nodes.js';
-import { renderMovieList } from './renderMovieList.js';
+import { elements } from "../handleNavigation/nodes.js";
+import { renderMovieList } from "./renderMovieList.js";
 
 async function getRelatedMoviesByID(id) {
   try {
-    const url = new URL('http://localhost:3000/movie/:id/similar');
-    url.pathname = url.pathname.replace(':id', id);
+    const url = new URL(
+      "https://onimovies-api.onrender.com/api/v1/movie/:id/similar"
+    );
+    url.pathname = url.pathname.replace(":id", id);
 
     const response = await fetch(url.toString());
 

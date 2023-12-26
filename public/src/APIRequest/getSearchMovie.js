@@ -1,10 +1,12 @@
-import { elements } from '../handleNavigation/nodes.js';
-import { renderMovieList } from './renderMovieList.js';
+import { elements } from "../handleNavigation/nodes.js";
+import { renderMovieList } from "./renderMovieList.js";
 
 async function getSearchMovie(query) {
   try {
-    const url = new URL('http://localhost:3000/search/movie');
-    url.searchParams.append('query', query);
+    const url = new URL(
+      "https://onimovies-api.onrender.com/api/v1/search/movie"
+    );
+    url.searchParams.append("query", query);
 
     const response = await fetch(url.toString());
 
