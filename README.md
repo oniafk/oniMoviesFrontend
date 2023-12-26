@@ -12,7 +12,9 @@ This project is a simple web application that utilizes the Movie Database (Movie
 
 - JavaScript
 - HTML
-- CSS (you can specify if you use any preprocessor or framework)
+- CSS
+- server - express
+- api request - axios
 - MovieDB API
 
 ## Getting Started
