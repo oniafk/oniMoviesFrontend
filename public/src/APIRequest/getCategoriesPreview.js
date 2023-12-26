@@ -6,7 +6,7 @@ async function getCategoriesMoviesPreview() {
     "https://onimovies-api.onrender.com/api/v1/category/movie/list",
     { mode: "no-cors" }
   );
-  const categories = await response.json();
+  const categories = response;
 
   renderCategoryList(categories, elements.categoriesPreviewList);
 }
