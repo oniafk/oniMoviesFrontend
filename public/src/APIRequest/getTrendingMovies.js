@@ -3,11 +3,10 @@ import { renderMovieList } from "./renderMovieList.js";
 
 async function getTrendingMovies() {
   const response = await fetch(
-    "https://onimovies-api.onrender.com/api/v1/trending/movie/day",
-    { mode: "no-cors" }
+    "https://onimovies-api.onrender.com/api/v1/trending/movie/day"
   );
+
   const movies = await response.json();
-  console.log(response);
 
   renderMovieList(movies, elements.trendingMoviesPreviewList);
 }

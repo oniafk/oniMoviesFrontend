@@ -3,9 +3,9 @@ import { renderMovieList } from "./renderMovieList.js";
 
 async function getMoviesByCategory(id, categoryName) {
   try {
-    const url = new URL("https://onimovies-api.onrender.com/api/v1/movie/:id", {
-      mode: "no-cors",
-    });
+    const url = new URL(
+      "https://onimovies-api.onrender.com/api/v1/discover/movie/:id"
+    );
     url.pathname = url.pathname.replace(":id", id);
 
     const response = await fetch(url.toString());
@@ -14,6 +14,7 @@ async function getMoviesByCategory(id, categoryName) {
       throw new Error(`Error en la solicitud: ${response.statusText}`);
     }
     const movies = await response.json();
+
     renderMovieList(movies, elements.genericSection);
 
     elements.headerCategoryTitle.innerHTML = categoryName;

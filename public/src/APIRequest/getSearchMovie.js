@@ -4,8 +4,7 @@ import { renderMovieList } from "./renderMovieList.js";
 async function getSearchMovie(query) {
   try {
     const url = new URL(
-      "https://onimovies-api.onrender.com/api/v1/search/movie",
-      { mode: "no-cors" }
+      "https://onimovies-api.onrender.com/api/v1/search/movie"
     );
     url.searchParams.append("query", query);
 
