@@ -7,6 +7,7 @@ async function getTrendingMoviesList() {
     { mode: "no-cors" }
   );
   const movies = await response.json();
+  console.log(movies);
 
   renderMovieList(movies, elements.genericSection);
 }
